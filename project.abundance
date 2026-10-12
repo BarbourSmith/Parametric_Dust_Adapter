@@ -514,6 +514,384 @@
                       "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ]
+                },
+                {
+                  "atomType": "Molecule",
+                  "x": 0.8,
+                  "y": 0.2,
+                  "uniqueID": "id-824",
+                  "name": "Front Slope",
+                  "topLevel": false,
+                  "allAtoms": [
+                    {
+                      "atomType": "Output",
+                      "x": 1,
+                      "y": 0.5,
+                      "uniqueID": "id-826",
+                      "ioValues": [
+                        {
+                          "name": "number or geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Rectangle",
+                      "x": 0.1,
+                      "y": 0.5,
+                      "uniqueID": "id-828",
+                      "ioValues": [
+                        {
+                          "name": "x length",
+                          "ioValue": 400
+                        },
+                        {
+                          "name": "y length",
+                          "ioValue": 400
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Extrude",
+                      "x": 0.3,
+                      "y": 0.5,
+                      "uniqueID": "id-832",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "height",
+                          "ioValue": 200
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.4,
+                      "y": 0.5,
+                      "uniqueID": "id-836",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": -200
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Rotate",
+                      "x": 0.6,
+                      "y": 0.5,
+                      "uniqueID": "id-842",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "x-axis degrees",
+                          "ioValue": -27.4
+                        },
+                        {
+                          "name": "y-axis degrees",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "z-axis degrees",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.7,
+                      "y": 0.5,
+                      "uniqueID": "id-848",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 4
+                        }
+                      ]
+                    }
+                  ],
+                  "allConnectors": [
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-828",
+                      "ap2ID": "id-832"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-832",
+                      "ap2ID": "id-836"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-836",
+                      "ap2ID": "id-842"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-842",
+                      "ap2ID": "id-848"
+                    },
+                    {
+                      "ap2Name": "number or geometry",
+                      "ap1ID": "id-848",
+                      "ap2ID": "id-826"
+                    }
+                  ],
+                  "fileTypeVersion": 1
+                },
+                {
+                  "atomType": "Molecule",
+                  "x": 0.8,
+                  "y": 0.9,
+                  "uniqueID": "id-854",
+                  "name": "Notch",
+                  "topLevel": false,
+                  "allAtoms": [
+                    {
+                      "atomType": "Output",
+                      "x": 1,
+                      "y": 0.5,
+                      "uniqueID": "id-856",
+                      "ioValues": [
+                        {
+                          "name": "number or geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Circle",
+                      "x": 0.1,
+                      "y": 0.3,
+                      "uniqueID": "id-858",
+                      "ioValues": [
+                        {
+                          "name": "diameter",
+                          "ioValue": 259
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.3,
+                      "y": 0.3,
+                      "uniqueID": "id-861",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 87
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Rectangle",
+                      "x": 0.1,
+                      "y": 0.7,
+                      "uniqueID": "id-867",
+                      "ioValues": [
+                        {
+                          "name": "x length",
+                          "ioValue": 87.55
+                        },
+                        {
+                          "name": "y length",
+                          "ioValue": 300
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.3,
+                      "y": 0.7,
+                      "uniqueID": "id-871",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": -56.225
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Intersection",
+                      "x": 0.4,
+                      "y": 0.5,
+                      "uniqueID": "id-877",
+                      "ioValues": [
+                        {
+                          "name": "geometry1",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "geometry2",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Extrude",
+                      "x": 0.6,
+                      "y": 0.5,
+                      "uniqueID": "id-881",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "height",
+                          "ioValue": 150
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.7,
+                      "y": 0.5,
+                      "uniqueID": "id-885",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 10.5
+                        }
+                      ]
+                    }
+                  ],
+                  "allConnectors": [
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-858",
+                      "ap2ID": "id-861"
+                    },
+                    {
+                      "ap2Name": "geometry1",
+                      "ap1ID": "id-861",
+                      "ap2ID": "id-877"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-867",
+                      "ap2ID": "id-871"
+                    },
+                    {
+                      "ap2Name": "geometry2",
+                      "ap1ID": "id-871",
+                      "ap2ID": "id-877"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-877",
+                      "ap2ID": "id-881"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-881",
+                      "ap2ID": "id-885"
+                    },
+                    {
+                      "ap2Name": "number or geometry",
+                      "ap1ID": "id-885",
+                      "ap2ID": "id-856"
+                    }
+                  ],
+                  "fileTypeVersion": 1
+                },
+                {
+                  "atomType": "Intersection",
+                  "x": 0.9,
+                  "y": 0.4,
+                  "uniqueID": "id-891",
+                  "ioValues": [
+                    {
+                      "name": "geometry1",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "geometry2",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Difference",
+                  "x": 0.9,
+                  "y": 0.6,
+                  "uniqueID": "id-895",
+                  "ioValues": [
+                    {
+                      "name": "retain",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "remove",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
                 }
               ],
               "allConnectors": [
@@ -563,8 +941,28 @@
                   "ap2ID": "id-337"
                 },
                 {
-                  "ap2Name": "number or geometry",
+                  "ap2Name": "geometry1",
                   "ap1ID": "id-337",
+                  "ap2ID": "id-891"
+                },
+                {
+                  "ap2Name": "geometry2",
+                  "ap1ID": "id-824",
+                  "ap2ID": "id-891"
+                },
+                {
+                  "ap2Name": "remove",
+                  "ap1ID": "id-854",
+                  "ap2ID": "id-895"
+                },
+                {
+                  "ap2Name": "retain",
+                  "ap1ID": "id-891",
+                  "ap2ID": "id-895"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-895",
                   "ap2ID": "id-278"
                 }
               ],
@@ -706,13 +1104,53 @@
                 {
                   "name": "Shape2",
                   "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "unionType": "Fusion"
+            },
+            {
+              "atomType": "Fusion",
+              "x": 0.5,
+              "y": 0.6,
+              "uniqueID": "id-974",
+              "ioValues": [
+                {
+                  "name": "Shape 1",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
-                  "name": "Shape3",
+                  "name": "Shape2",
                   "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
               "unionType": "Fusion"
+            },
+            {
+              "atomType": "Code",
+              "x": 0.6,
+              "y": 0.6,
+              "uniqueID": "id-979",
+              "ioValues": [
+                {
+                  "name": "shape",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "radius",
+                  "ioValue": 2.5
+                },
+                {
+                  "name": "aboveZ",
+                  "ioValue": 2.5
+                },
+                {
+                  "name": "keepY",
+                  "ioValue": -99
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "/**\n * Rounds the edges of a solid, like the molded fillets on the original\n * Maslow adapters. Edges are left sharp where they meet the base (below\n * `aboveZ`), at the hose socket mouth (reaching back past `keepY`, so the\n * hose still fits) and along the front face (y = 0), where the front wall\n * is only 4 mm tall.\n *\n * OpenCascade can't round every combination of edges at every hose size,\n * so edges are added one at a time, each with the largest radius (from\n * `radius` down to a fifth of it) that still rounds along with the edges\n * chosen so far. Edges that can't be rounded stay sharp and are listed in\n * the console.\n */\nfunction run(\n  shape: Assembly,\n  radius: number = 2.5,\n  aboveZ: number = 2.5,\n  keepY: number = -99,\n): Assembly {\n  const wanted = (edge) => {\n    const [[, y0, z0], [, y1]] = edge.boundingBox.bounds;\n    return z0 > aboveZ && y0 > keepY && y1 < -0.5;\n  };\n  const describe = (edge) =>\n    edge.boundingBox.bounds\n      .map((p) => p.map((v) => v.toFixed(1)).join(\", \"))\n      .join(\" to \");\n  const radii = [1, 0.6, 0.4, 0.2].map((f) => radius * f);\n\n  return new Assembly(shape).onLeafs((leaf) => {\n    const solid = leaf.geometry;\n    const chosen: { edge: any; r: number }[] = [];\n    let rounded = solid;\n    let smaller = 0;\n    for (const edge of solid.edges) {\n      if (!wanted(edge)) continue;\n      let done = false;\n      for (const r of radii) {\n        const trial = [...chosen, { edge, r }];\n        try {\n          rounded = solid.clone().fillet((e) => {\n            const hit = trial.find((t) => t.edge.isSame(e));\n            return hit ? hit.r : null;\n          });\n          chosen.push({ edge, r });\n          if (r < radius) smaller++;\n          done = true;\n          break;\n        } catch (err) {\n          // try a smaller radius\n        }\n      }\n      if (!done) console.log(`Left sharp: edge from ${describe(edge)}`);\n    }\n    console.log(\n      `Rounded ${chosen.length} edges (${smaller} with a smaller radius)`,\n    );\n    leaf.geometry = rounded;\n    return leaf;\n  });\n}\n",
+              "compiledCode": "\"use strict\";\n/**\n * Rounds the edges of a solid, like the molded fillets on the original\n * Maslow adapters. Edges are left sharp where they meet the base (below\n * `aboveZ`), at the hose socket mouth (reaching back past `keepY`, so the\n * hose still fits) and along the front face (y = 0), where the front wall\n * is only 4 mm tall.\n *\n * OpenCascade can't round every combination of edges at every hose size,\n * so edges are added one at a time, each with the largest radius (from\n * `radius` down to a fifth of it) that still rounds along with the edges\n * chosen so far. Edges that can't be rounded stay sharp and are listed in\n * the console.\n */\nfunction run(shape, radius = 2.5, aboveZ = 2.5, keepY = -99) {\n    const wanted = (edge) => {\n        const [[, y0, z0], [, y1]] = edge.boundingBox.bounds;\n        return z0 > aboveZ && y0 > keepY && y1 < -0.5;\n    };\n    const describe = (edge) => edge.boundingBox.bounds\n        .map((p) => p.map((v) => v.toFixed(1)).join(\", \"))\n        .join(\" to \");\n    const radii = [1, 0.6, 0.4, 0.2].map((f) => radius * f);\n    return new Assembly(shape).onLeafs((leaf) => {\n        const solid = leaf.geometry;\n        const chosen = [];\n        let rounded = solid;\n        let smaller = 0;\n        for (const edge of solid.edges) {\n            if (!wanted(edge))\n                continue;\n            let done = false;\n            for (const r of radii) {\n                const trial = [...chosen, { edge, r }];\n                try {\n                    rounded = solid.clone().fillet((e) => {\n                        const hit = trial.find((t) => t.edge.isSame(e));\n                        return hit ? hit.r : null;\n                    });\n                    chosen.push({ edge, r });\n                    if (r < radius)\n                        smaller++;\n                    done = true;\n                    break;\n                }\n                catch (err) {\n                    // try a smaller radius\n                }\n            }\n            if (!done)\n                console.log(`Left sharp: edge from ${describe(edge)}`);\n        }\n        console.log(`Rounded ${chosen.length} edges (${smaller} with a smaller radius)`);\n        leaf.geometry = rounded;\n        return leaf;\n    });\n}\n"
             }
           ],
           "allConnectors": [
@@ -727,19 +1165,29 @@
               "ap2ID": "id-364"
             },
             {
-              "ap2Name": "Shape2",
+              "ap2Name": "Shape 1",
               "ap1ID": "id-276",
-              "ap2ID": "id-364"
+              "ap2ID": "id-974"
             },
             {
-              "ap2Name": "Shape3",
+              "ap2Name": "Shape2",
               "ap1ID": "id-341",
-              "ap2ID": "id-364"
+              "ap2ID": "id-974"
             },
             {
               "ap2Name": "number or geometry",
               "ap1ID": "id-364",
               "ap2ID": "id-247"
+            },
+            {
+              "ap2Name": "shape",
+              "ap1ID": "id-974",
+              "ap2ID": "id-979"
+            },
+            {
+              "ap2Name": "Shape2",
+              "ap1ID": "id-979",
+              "ap2ID": "id-364"
             }
           ],
           "fileTypeVersion": 1
@@ -945,6 +1393,384 @@
                       "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ]
+                },
+                {
+                  "atomType": "Molecule",
+                  "x": 0.8,
+                  "y": 0.2,
+                  "uniqueID": "id-899",
+                  "name": "Front Slope",
+                  "topLevel": false,
+                  "allAtoms": [
+                    {
+                      "atomType": "Output",
+                      "x": 1,
+                      "y": 0.5,
+                      "uniqueID": "id-901",
+                      "ioValues": [
+                        {
+                          "name": "number or geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Rectangle",
+                      "x": 0.1,
+                      "y": 0.5,
+                      "uniqueID": "id-903",
+                      "ioValues": [
+                        {
+                          "name": "x length",
+                          "ioValue": 400
+                        },
+                        {
+                          "name": "y length",
+                          "ioValue": 400
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Extrude",
+                      "x": 0.3,
+                      "y": 0.5,
+                      "uniqueID": "id-907",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "height",
+                          "ioValue": 200
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.4,
+                      "y": 0.5,
+                      "uniqueID": "id-911",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": -200
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Rotate",
+                      "x": 0.6,
+                      "y": 0.5,
+                      "uniqueID": "id-917",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "x-axis degrees",
+                          "ioValue": -27.4
+                        },
+                        {
+                          "name": "y-axis degrees",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "z-axis degrees",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.7,
+                      "y": 0.5,
+                      "uniqueID": "id-923",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 1.75
+                        }
+                      ]
+                    }
+                  ],
+                  "allConnectors": [
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-903",
+                      "ap2ID": "id-907"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-907",
+                      "ap2ID": "id-911"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-911",
+                      "ap2ID": "id-917"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-917",
+                      "ap2ID": "id-923"
+                    },
+                    {
+                      "ap2Name": "number or geometry",
+                      "ap1ID": "id-923",
+                      "ap2ID": "id-901"
+                    }
+                  ],
+                  "fileTypeVersion": 1
+                },
+                {
+                  "atomType": "Molecule",
+                  "x": 0.8,
+                  "y": 0.9,
+                  "uniqueID": "id-929",
+                  "name": "Notch",
+                  "topLevel": false,
+                  "allAtoms": [
+                    {
+                      "atomType": "Output",
+                      "x": 1,
+                      "y": 0.5,
+                      "uniqueID": "id-931",
+                      "ioValues": [
+                        {
+                          "name": "number or geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Circle",
+                      "x": 0.1,
+                      "y": 0.3,
+                      "uniqueID": "id-933",
+                      "ioValues": [
+                        {
+                          "name": "diameter",
+                          "ioValue": 255
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.3,
+                      "y": 0.3,
+                      "uniqueID": "id-936",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 87
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Rectangle",
+                      "x": 0.1,
+                      "y": 0.7,
+                      "uniqueID": "id-942",
+                      "ioValues": [
+                        {
+                          "name": "x length",
+                          "ioValue": 85.55
+                        },
+                        {
+                          "name": "y length",
+                          "ioValue": 300
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.3,
+                      "y": 0.7,
+                      "uniqueID": "id-946",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": -57.225
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Intersection",
+                      "x": 0.4,
+                      "y": 0.5,
+                      "uniqueID": "id-952",
+                      "ioValues": [
+                        {
+                          "name": "geometry1",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "geometry2",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Extrude",
+                      "x": 0.6,
+                      "y": 0.5,
+                      "uniqueID": "id-956",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "height",
+                          "ioValue": 150
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.7,
+                      "y": 0.5,
+                      "uniqueID": "id-960",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": 8.5
+                        }
+                      ]
+                    }
+                  ],
+                  "allConnectors": [
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-933",
+                      "ap2ID": "id-936"
+                    },
+                    {
+                      "ap2Name": "geometry1",
+                      "ap1ID": "id-936",
+                      "ap2ID": "id-952"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-942",
+                      "ap2ID": "id-946"
+                    },
+                    {
+                      "ap2Name": "geometry2",
+                      "ap1ID": "id-946",
+                      "ap2ID": "id-952"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-952",
+                      "ap2ID": "id-956"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-956",
+                      "ap2ID": "id-960"
+                    },
+                    {
+                      "ap2Name": "number or geometry",
+                      "ap1ID": "id-960",
+                      "ap2ID": "id-931"
+                    }
+                  ],
+                  "fileTypeVersion": 1
+                },
+                {
+                  "atomType": "Intersection",
+                  "x": 0.9,
+                  "y": 0.4,
+                  "uniqueID": "id-966",
+                  "ioValues": [
+                    {
+                      "name": "geometry1",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "geometry2",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Difference",
+                  "x": 0.9,
+                  "y": 0.6,
+                  "uniqueID": "id-970",
+                  "ioValues": [
+                    {
+                      "name": "retain",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "remove",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
                 }
               ],
               "allConnectors": [
@@ -984,8 +1810,28 @@
                   "ap2ID": "id-413"
                 },
                 {
-                  "ap2Name": "number or geometry",
+                  "ap2Name": "geometry1",
                   "ap1ID": "id-413",
+                  "ap2ID": "id-966"
+                },
+                {
+                  "ap2Name": "geometry2",
+                  "ap1ID": "id-899",
+                  "ap2ID": "id-966"
+                },
+                {
+                  "ap2Name": "remove",
+                  "ap1ID": "id-929",
+                  "ap2ID": "id-970"
+                },
+                {
+                  "ap2Name": "retain",
+                  "ap1ID": "id-966",
+                  "ap2ID": "id-970"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-970",
                   "ap2ID": "id-379"
                 }
               ],
@@ -1402,13 +2248,54 @@
                 {
                   "name": "Shape2",
                   "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "unionType": "Fusion"
+            },
+            {
+              "atomType": "Fusion",
+              "x": 0.5,
+              "y": 0.3,
+              "uniqueID": "id-992",
+              "ioValues": [
+                {
+                  "name": "Shape 1",
+                  "ioValue": "__GEOMETRY_INPUT__"
                 },
                 {
-                  "name": "Shape3",
+                  "name": "Shape2",
                   "ioValue": "__GEOMETRY_INPUT__"
                 }
               ],
               "unionType": "Fusion"
+            },
+            {
+              "atomType": "Code",
+              "x": 0.6,
+              "y": 0.3,
+              "uniqueID": "id-997",
+              "ioValues": [
+                {
+                  "name": "shape",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "radius",
+                  "ioValue": 0.5
+                },
+                {
+                  "name": "aboveZ",
+                  "ioValue": 0
+                },
+                {
+                  "name": "keepY",
+                  "ioValue": -99,
+                  "currentEquation": "-99"
+                }
+              ],
+              "interpreterVersion": 1,
+              "code": "/**\n * Rounds the edges of a solid, like the molded fillets on the original\n * Maslow adapters. Edges are left sharp where they meet the base (below\n * `aboveZ`), at the hose socket mouth (reaching back past `keepY`, so the\n * hose still fits) and along the front face (y = 0), where the front wall\n * is only 4 mm tall.\n *\n * OpenCascade can't round every combination of edges at every hose size,\n * so edges are added one at a time, each with the largest radius (from\n * `radius` down to a fifth of it) that still rounds along with the edges\n * chosen so far. Edges that can't be rounded stay sharp and are listed in\n * the console.\n */\nfunction run(\n  shape: Assembly,\n  radius: number = 2.5,\n  aboveZ: number = 2.5,\n  keepY: number = -99,\n): Assembly {\n  const wanted = (edge) => {\n    const [[, y0, z0], [, y1]] = edge.boundingBox.bounds;\n    return z0 > aboveZ && y0 > keepY && y1 < -0.5;\n  };\n  const describe = (edge) =>\n    edge.boundingBox.bounds\n      .map((p) => p.map((v) => v.toFixed(1)).join(\", \"))\n      .join(\" to \");\n  const radii = [1, 0.6, 0.4, 0.2].map((f) => radius * f);\n\n  return new Assembly(shape).onLeafs((leaf) => {\n    const solid = leaf.geometry;\n    const chosen: { edge: any; r: number }[] = [];\n    let rounded = solid;\n    let smaller = 0;\n    for (const edge of solid.edges) {\n      if (!wanted(edge)) continue;\n      let done = false;\n      for (const r of radii) {\n        const trial = [...chosen, { edge, r }];\n        try {\n          rounded = solid.clone().fillet((e) => {\n            const hit = trial.find((t) => t.edge.isSame(e));\n            return hit ? hit.r : null;\n          });\n          chosen.push({ edge, r });\n          if (r < radius) smaller++;\n          done = true;\n          break;\n        } catch (err) {\n          // try a smaller radius\n        }\n      }\n      if (!done) console.log(`Left sharp: edge from ${describe(edge)}`);\n    }\n    console.log(\n      `Rounded ${chosen.length} edges (${smaller} with a smaller radius)`,\n    );\n    leaf.geometry = rounded;\n    return leaf;\n  });\n}\n",
+              "compiledCode": "\"use strict\";\n/**\n * Rounds the edges of a solid, like the molded fillets on the original\n * Maslow adapters. Edges are left sharp where they meet the base (below\n * `aboveZ`), at the hose socket mouth (reaching back past `keepY`, so the\n * hose still fits) and along the front face (y = 0), where the front wall\n * is only 4 mm tall.\n *\n * OpenCascade can't round every combination of edges at every hose size,\n * so edges are added one at a time, each with the largest radius (from\n * `radius` down to a fifth of it) that still rounds along with the edges\n * chosen so far. Edges that can't be rounded stay sharp and are listed in\n * the console.\n */\nfunction run(shape, radius = 2.5, aboveZ = 2.5, keepY = -99) {\n    const wanted = (edge) => {\n        const [[, y0, z0], [, y1]] = edge.boundingBox.bounds;\n        return z0 > aboveZ && y0 > keepY && y1 < -0.5;\n    };\n    const describe = (edge) => edge.boundingBox.bounds\n        .map((p) => p.map((v) => v.toFixed(1)).join(\", \"))\n        .join(\" to \");\n    const radii = [1, 0.6, 0.4, 0.2].map((f) => radius * f);\n    return new Assembly(shape).onLeafs((leaf) => {\n        const solid = leaf.geometry;\n        const chosen = [];\n        let rounded = solid;\n        let smaller = 0;\n        for (const edge of solid.edges) {\n            if (!wanted(edge))\n                continue;\n            let done = false;\n            for (const r of radii) {\n                const trial = [...chosen, { edge, r }];\n                try {\n                    rounded = solid.clone().fillet((e) => {\n                        const hit = trial.find((t) => t.edge.isSame(e));\n                        return hit ? hit.r : null;\n                    });\n                    chosen.push({ edge, r });\n                    if (r < radius)\n                        smaller++;\n                    done = true;\n                    break;\n                }\n                catch (err) {\n                    // try a smaller radius\n                }\n            }\n            if (!done)\n                console.log(`Left sharp: edge from ${describe(edge)}`);\n        }\n        console.log(`Rounded ${chosen.length} edges (${smaller} with a smaller radius)`);\n        leaf.geometry = rounded;\n        return leaf;\n    });\n}\n"
             }
           ],
           "allConnectors": [
@@ -1420,15 +2307,15 @@
             {
               "ap2Name": "Shape 1",
               "ap1ID": "id-377",
-              "ap2ID": "id-493"
+              "ap2ID": "id-992"
             },
             {
               "ap2Name": "Shape2",
               "ap1ID": "id-417",
-              "ap2ID": "id-493"
+              "ap2ID": "id-992"
             },
             {
-              "ap2Name": "Shape3",
+              "ap2Name": "Shape2",
               "ap1ID": "id-440",
               "ap2ID": "id-493"
             },
@@ -1436,6 +2323,16 @@
               "ap2Name": "number or geometry",
               "ap1ID": "id-493",
               "ap2ID": "id-372"
+            },
+            {
+              "ap2Name": "shape",
+              "ap1ID": "id-992",
+              "ap2ID": "id-997"
+            },
+            {
+              "ap2Name": "Shape 1",
+              "ap1ID": "id-997",
+              "ap2ID": "id-493"
             }
           ],
           "fileTypeVersion": 1
