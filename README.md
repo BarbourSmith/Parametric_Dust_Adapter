@@ -33,5 +33,7 @@ The seven adapters in [MaslowCNC/Maslow4](https://github.com/MaslowCNC/Maslow4) 
 
 This model keeps the base identical, traced from the original STEP files, so it mounts to the sled the same way. The hood above it is a simpler 2 mm curved shell of the same height and shape, without the originals' internal ribs.
 
+__GEOMETRY_INPUT__
+
 
 
