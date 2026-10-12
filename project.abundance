@@ -6,9 +6,8 @@
   "name": "Parametric_Dust_Adapter",
   "ioValues": [
     {
-      "name": "Hose Size",
-      "ioValue": "Festool 40 mm (40 mm)",
-      "currentEquation": "Festool 40 mm (40 mm)"
+      "name": "Hose_Size_mm",
+      "ioValue": 63.5
     }
   ],
   "topLevel": true,
@@ -1561,8 +1560,8 @@
       "x": 0,
       "y": 0.2,
       "uniqueID": "id-515",
-      "name": "Hose Size",
-      "type": "dropdown",
+      "name": "Hose_Size_mm",
+      "type": "number",
       "options": [
         "2.5 in (63.5 mm)",
         "1.25 in (31.75 mm)",
@@ -2156,6 +2155,21 @@
         }
       ],
       "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Readme",
+      "x": 0.7,
+      "y": 0.2,
+      "uniqueID": "id-822",
+      "name": "README",
+      "ioValues": [
+        {
+          "name": "value",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ],
+      "readMeText": "# Parametric Dust Hose Adapter\n\nA dust hose adapter for the [Maslow 4.1](https://www.maslowcnc.com) that fits any hose. Enter **Hose_Size_mm**, the outside diameter of the socket your hose slides over, and download the adapter as a STEP file in Run mode.\n\nThe Maslow ships adapters in seven sizes:\n\n| Hose | Hose_Size_mm |\n| --- | --- |\n| 1.25 in | 31.75 |\n| 1.5 in | 38.1 |\n| Festool 40 mm | 40 |\n| 2 in | 50.8 |\n| 2.31 in | 58.7 |\n| 2.5 in | 63.5 |\n| 4 in | 101.6 |\n\n## How it compares to the originals\n\nThe seven adapters in [MaslowCNC/Maslow4](https://github.com/MaslowCNC/Maslow4) (shown in *Reference Adapters*) share the same base: outline, mounting tabs, dust cover bolt bosses and 2 mm walls. Only the hose socket changes. It is a 2 mm-wall tube whose outside diameter is the hose size, and its axis rises with the size: 25 mm up to 40 mm hoses, then about half the diameter plus 5.5 mm.\n\nThis model keeps the base identical, traced from the original STEP files, so it mounts to the sled the same way. The hood above it is a simpler 2 mm curved shell of the same height and shape, without the originals' internal ribs.",
+      "global": true
     }
   ],
   "allConnectors": [
@@ -2163,6 +2177,11 @@
       "ap2Name": "number or geometry",
       "ap1ID": "id-195",
       "ap2ID": "id-4"
+    },
+    {
+      "ap2Name": "SocketOD",
+      "ap1ID": "id-515",
+      "ap2ID": "id-195"
     }
   ],
   "unitsKey": "MM",

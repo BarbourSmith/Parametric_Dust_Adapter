@@ -6,10 +6,32 @@
 
 ## Inputs
 
-- **Hose Size** (string)
+- **Hose_Size_mm** (number)
 
 
 
 
- 
+ # Parametric Dust Hose Adapter
+
+A dust hose adapter for the [Maslow 4.1](https://www.maslowcnc.com) that fits any hose. Enter **Hose_Size_mm**, the outside diameter of the socket your hose slides over, and download the adapter as a STEP file in Run mode.
+
+The Maslow ships adapters in seven sizes:
+
+| Hose | Hose_Size_mm |
+| --- | --- |
+| 1.25 in | 31.75 |
+| 1.5 in | 38.1 |
+| Festool 40 mm | 40 |
+| 2 in | 50.8 |
+| 2.31 in | 58.7 |
+| 2.5 in | 63.5 |
+| 4 in | 101.6 |
+
+## How it compares to the originals
+
+The seven adapters in [MaslowCNC/Maslow4](https://github.com/MaslowCNC/Maslow4) (shown in *Reference Adapters*) share the same base: outline, mounting tabs, dust cover bolt bosses and 2 mm walls. Only the hose socket changes. It is a 2 mm-wall tube whose outside diameter is the hose size, and its axis rises with the size: 25 mm up to 40 mm hoses, then about half the diameter plus 5.5 mm.
+
+This model keeps the base identical, traced from the original STEP files, so it mounts to the sled the same way. The hood above it is a simpler 2 mm curved shell of the same height and shape, without the originals' internal ribs.
+
+
 
