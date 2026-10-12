@@ -1,13 +1,2164 @@
 {
-    "atomType": "Molecule",
-    "x": 0,
-    "y": 0,
-    "uniqueID": "id-3",
-    "name": "Parametric_Dust_Adapter",
-    "topLevel": true,
-    "allAtoms": [],
-    "allConnectors": [],
-    "unitsKey": "MM",
-    "fileTypeVersion": 1,
-    "filetypeVersion": 1
+  "atomType": "Molecule",
+  "x": 0,
+  "y": 0,
+  "uniqueID": "id-3",
+  "name": "Parametric_Dust_Adapter",
+  "ioValues": [
+    {
+      "name": "Hose Size",
+      "ioValue": 10
+    }
+  ],
+  "topLevel": true,
+  "allAtoms": [
+    {
+      "atomType": "Molecule",
+      "x": 0.4,
+      "y": 0.4,
+      "uniqueID": "id-195",
+      "name": "Dust Hose Adapter",
+      "ioValues": [
+        {
+          "name": "SocketOD",
+          "ioValue": 63.5
+        }
+      ],
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Output",
+          "x": 1,
+          "y": 0.5,
+          "uniqueID": "id-197",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Input",
+          "x": 0,
+          "y": 0.2,
+          "uniqueID": "id-229",
+          "name": "SocketOD",
+          "type": "number",
+          "options": []
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.2,
+          "y": 0.6,
+          "uniqueID": "id-232",
+          "name": "Underside Opening",
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-234",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Code",
+              "x": 0.4,
+              "y": 0.5,
+              "uniqueID": "id-236",
+              "interpreterVersion": 1,
+              "code": "/**\n * The open underside of the dust hose adapter: the area inside its 2 mm\n * walls that faces the sled. Traced from the bottom face of the Maslow4\n * adapter STEP files.\n */\nfunction run(): Assembly {\n  const opening = replicad\n    .draw([31.36, -4.37])\n    .lineTo([70.13, -4.37]) // inside of the front wall\n    .threePointsArcTo([74.46, -21.63], [75.51, -14.5]) // rounded corner\n    .threePointsArcTo([-74.46, -21.63], [0, -77.54]) // inside of outer wall r77.54\n    .threePointsArcTo([-70.13, -4.37], [-75.51, -14.5]) // rounded corner\n    .lineTo([-31.36, -4.37])\n    .threePointsArcTo([-30.78, -6.76], [-30.67, -5.7]) // small corner\n    .threePointsArcTo([30.78, -6.76], [0, -44.41]) // outside of router wall r31.41\n    .threePointsArcTo([31.36, -4.37], [30.67, -5.7]) // small corner\n    .close();\n  return new Assembly({ geometry: opening });\n}\n",
+              "compiledCode": "\"use strict\";\n/**\n * The open underside of the dust hose adapter: the area inside its 2 mm\n * walls that faces the sled. Traced from the bottom face of the Maslow4\n * adapter STEP files.\n */\nfunction run() {\n    const opening = replicad\n        .draw([31.36, -4.37])\n        .lineTo([70.13, -4.37]) // inside of the front wall\n        .threePointsArcTo([74.46, -21.63], [75.51, -14.5]) // rounded corner\n        .threePointsArcTo([-74.46, -21.63], [0, -77.54]) // inside of outer wall r77.54\n        .threePointsArcTo([-70.13, -4.37], [-75.51, -14.5]) // rounded corner\n        .lineTo([-31.36, -4.37])\n        .threePointsArcTo([-30.78, -6.76], [-30.67, -5.7]) // small corner\n        .threePointsArcTo([30.78, -6.76], [0, -44.41]) // outside of router wall r31.41\n        .threePointsArcTo([31.36, -4.37], [30.67, -5.7]) // small corner\n        .close();\n    return new Assembly({ geometry: opening });\n}\n"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-236",
+              "ap2ID": "id-234"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.4,
+          "y": 0.4,
+          "uniqueID": "id-245",
+          "name": "Outer Shape",
+          "ioValues": [
+            {
+              "name": "Opening",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-247",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0,
+              "y": 0.2,
+              "uniqueID": "id-249",
+              "name": "Opening",
+              "type": "geometry",
+              "options": []
+            },
+            {
+              "atomType": "Molecule",
+              "x": 0.3,
+              "y": 0.2,
+              "uniqueID": "id-252",
+              "name": "Base Flange",
+              "ioValues": [
+                {
+                  "name": "Opening",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-254",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.2,
+                  "uniqueID": "id-256",
+                  "name": "Opening",
+                  "type": "geometry",
+                  "options": []
+                },
+                {
+                  "atomType": "Code",
+                  "x": 0.2,
+                  "y": 0.3,
+                  "uniqueID": "id-259",
+                  "interpreterVersion": 1,
+                  "code": "/**\n * Footprint of the dust hose adapter where it sits on the sled: the\n * horseshoe around the router opening, the four mounting tabs with their\n * 2 mm fillets, and the two dust cover bolt bosses. Traced from the bottom\n * face of the Maslow4 adapter STEP files, which all share it.\n */\nfunction run(): Assembly {\n  type Pt = [number, number];\n  // Right half, from where the right boss meets the r16 arc round to the\n  // back, as [end point, point on the arc] pairs; null is a straight line.\n  const start: Pt = [33.14, 7.56];\n  const right: [Pt, Pt | null][] = [\n    [[46.73, 0], [38.95, 2.02]], // concave r16 arc beside the boss\n    [[79.54, 0], null], // front edge\n    [[79.42, -4.36], null], // outer edge (r79.54, tiny)\n    [[81.52, -6.46], [80.0, -5.88]], // fillet r2\n    [[80.33, -15.31], [86.26, -11.61]], // front tab r4.54\n    [[77.75, -16.79], [78.71, -15.48]], // fillet r2\n    [[68.14, -41.03], [73.96, -29.28]], // outer edge r79.54\n    [[69.01, -43.88], [67.94, -42.65]], // fillet r2\n    [[63.82, -51.14], [70.79, -50.64]], // rear tab r4.54\n    [[60.84, -51.23], [62.31, -50.52]], // fillet r2\n    [[18.81, -77.29], [41.91, -67.6]], // outer edge r79.54\n  ];\n  const mirror = (p: Pt): Pt => [-p[0], p[1]];\n\n  // Router side: left boss, then the long way round the r29.41 router\n  // circle to the right boss. (The original also has a 0.1 mm r39 arc\n  // beside each boss; it is left out to avoid a sliver face.)\n  let pen = replicad\n    .draw([-23.93, 4.09])\n    .threePointsArcTo([23.93, 4.09], [0, -42.41])\n    .threePointsArcTo(start, [27.03, 9.66]); // right boss r5\n\n  for (const [end, mid] of right) {\n    pen = mid ? pen.threePointsArcTo(end, mid) : pen.lineTo(end);\n  }\n  // Back edge under the hose socket.\n  pen = pen.threePointsArcTo([-18.81, -77.29], [0, -80.3]);\n  // Left half: the right half's segments mirrored and in reverse.\n  const starts: Pt[] = [start, ...right.map(([end]) => end)];\n  for (let i = right.length - 1; i >= 0; i--) {\n    const [, mid] = right[i];\n    const end = mirror(starts[i]);\n    pen = mid ? pen.threePointsArcTo(end, mirror(mid)) : pen.lineTo(end);\n  }\n  const outline = pen\n    .threePointsArcTo([-23.93, 4.09], [-27.03, 9.66]) // left boss r5\n    .close();\n  return new Assembly({ geometry: outline });\n}\n",
+                  "compiledCode": "\"use strict\";\n/**\n * Footprint of the dust hose adapter where it sits on the sled: the\n * horseshoe around the router opening, the four mounting tabs with their\n * 2 mm fillets, and the two dust cover bolt bosses. Traced from the bottom\n * face of the Maslow4 adapter STEP files, which all share it.\n */\nfunction run() {\n    // Right half, from where the right boss meets the r16 arc round to the\n    // back, as [end point, point on the arc] pairs; null is a straight line.\n    const start = [33.14, 7.56];\n    const right = [\n        [[46.73, 0], [38.95, 2.02]], // concave r16 arc beside the boss\n        [[79.54, 0], null], // front edge\n        [[79.42, -4.36], null], // outer edge (r79.54, tiny)\n        [[81.52, -6.46], [80.0, -5.88]], // fillet r2\n        [[80.33, -15.31], [86.26, -11.61]], // front tab r4.54\n        [[77.75, -16.79], [78.71, -15.48]], // fillet r2\n        [[68.14, -41.03], [73.96, -29.28]], // outer edge r79.54\n        [[69.01, -43.88], [67.94, -42.65]], // fillet r2\n        [[63.82, -51.14], [70.79, -50.64]], // rear tab r4.54\n        [[60.84, -51.23], [62.31, -50.52]], // fillet r2\n        [[18.81, -77.29], [41.91, -67.6]], // outer edge r79.54\n    ];\n    const mirror = (p) => [-p[0], p[1]];\n    // Router side: left boss, then the long way round the r29.41 router\n    // circle to the right boss. (The original also has a 0.1 mm r39 arc\n    // beside each boss; it is left out to avoid a sliver face.)\n    let pen = replicad\n        .draw([-23.93, 4.09])\n        .threePointsArcTo([23.93, 4.09], [0, -42.41])\n        .threePointsArcTo(start, [27.03, 9.66]); // right boss r5\n    for (const [end, mid] of right) {\n        pen = mid ? pen.threePointsArcTo(end, mid) : pen.lineTo(end);\n    }\n    // Back edge under the hose socket.\n    pen = pen.threePointsArcTo([-18.81, -77.29], [0, -80.3]);\n    // Left half: the right half's segments mirrored and in reverse.\n    const starts = [start, ...right.map(([end]) => end)];\n    for (let i = right.length - 1; i >= 0; i--) {\n        const [, mid] = right[i];\n        const end = mirror(starts[i]);\n        pen = mid ? pen.threePointsArcTo(end, mirror(mid)) : pen.lineTo(end);\n    }\n    const outline = pen\n        .threePointsArcTo([-23.93, 4.09], [-27.03, 9.66]) // left boss r5\n        .close();\n    return new Assembly({ geometry: outline });\n}\n"
+                },
+                {
+                  "atomType": "Difference",
+                  "x": 0.4,
+                  "y": 0.5,
+                  "uniqueID": "id-268",
+                  "ioValues": [
+                    {
+                      "name": "retain",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "remove",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.6,
+                  "y": 0.5,
+                  "uniqueID": "id-272",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 2
+                    }
+                  ]
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "remove",
+                  "ap1ID": "id-256",
+                  "ap2ID": "id-268"
+                },
+                {
+                  "ap2Name": "retain",
+                  "ap1ID": "id-259",
+                  "ap2ID": "id-268"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-268",
+                  "ap2ID": "id-272"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-272",
+                  "ap2ID": "id-254"
+                }
+              ],
+              "fileTypeVersion": 1
+            },
+            {
+              "atomType": "Molecule",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-276",
+              "name": "Hood",
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-278",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Circle",
+                  "x": 0.1,
+                  "y": 0.2,
+                  "uniqueID": "id-280",
+                  "ioValues": [
+                    {
+                      "name": "diameter",
+                      "ioValue": 159.08
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Rectangle",
+                  "x": 0.1,
+                  "y": 0.4,
+                  "uniqueID": "id-283",
+                  "ioValues": [
+                    {
+                      "name": "x length",
+                      "ioValue": 180
+                    },
+                    {
+                      "name": "y length",
+                      "ioValue": 90
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.2,
+                  "y": 0.4,
+                  "uniqueID": "id-287",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": -45
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": 0
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Intersection",
+                  "x": 0.4,
+                  "y": 0.3,
+                  "uniqueID": "id-293",
+                  "ioValues": [
+                    {
+                      "name": "geometry1",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "geometry2",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Circle",
+                  "x": 0.1,
+                  "y": 0.7,
+                  "uniqueID": "id-297",
+                  "ioValues": [
+                    {
+                      "name": "diameter",
+                      "ioValue": 58.82
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.2,
+                  "y": 0.7,
+                  "uniqueID": "id-300",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": -13
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": 0
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Difference",
+                  "x": 0.5,
+                  "y": 0.5,
+                  "uniqueID": "id-306",
+                  "ioValues": [
+                    {
+                      "name": "retain",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "remove",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.6,
+                  "y": 0.5,
+                  "uniqueID": "id-310",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 40
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Molecule",
+                  "x": 0.6,
+                  "y": 0.8,
+                  "uniqueID": "id-314",
+                  "name": "Vault",
+                  "topLevel": false,
+                  "allAtoms": [
+                    {
+                      "atomType": "Output",
+                      "x": 1,
+                      "y": 0.5,
+                      "uniqueID": "id-316",
+                      "ioValues": [
+                        {
+                          "name": "number or geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Circle",
+                      "x": 0.2,
+                      "y": 0.5,
+                      "uniqueID": "id-318",
+                      "ioValues": [
+                        {
+                          "name": "diameter",
+                          "ioValue": 360
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Extrude",
+                      "x": 0.4,
+                      "y": 0.5,
+                      "uniqueID": "id-321",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "height",
+                          "ioValue": 300
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Rotate",
+                      "x": 0.6,
+                      "y": 0.5,
+                      "uniqueID": "id-325",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "x-axis degrees",
+                          "ioValue": 90
+                        },
+                        {
+                          "name": "y-axis degrees",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "z-axis degrees",
+                          "ioValue": 0
+                        }
+                      ]
+                    },
+                    {
+                      "atomType": "Move",
+                      "x": 0.8,
+                      "y": 0.5,
+                      "uniqueID": "id-331",
+                      "ioValues": [
+                        {
+                          "name": "geometry",
+                          "ioValue": "__GEOMETRY_INPUT__"
+                        },
+                        {
+                          "name": "xDist",
+                          "ioValue": 0
+                        },
+                        {
+                          "name": "yDist",
+                          "ioValue": 150
+                        },
+                        {
+                          "name": "zDist",
+                          "ioValue": -157.5
+                        }
+                      ]
+                    }
+                  ],
+                  "allConnectors": [
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-318",
+                      "ap2ID": "id-321"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-321",
+                      "ap2ID": "id-325"
+                    },
+                    {
+                      "ap2Name": "geometry",
+                      "ap1ID": "id-325",
+                      "ap2ID": "id-331"
+                    },
+                    {
+                      "ap2Name": "number or geometry",
+                      "ap1ID": "id-331",
+                      "ap2ID": "id-316"
+                    }
+                  ],
+                  "fileTypeVersion": 1
+                },
+                {
+                  "atomType": "Intersection",
+                  "x": 0.8,
+                  "y": 0.5,
+                  "uniqueID": "id-337",
+                  "ioValues": [
+                    {
+                      "name": "geometry1",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "geometry2",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "geometry1",
+                  "ap1ID": "id-280",
+                  "ap2ID": "id-293"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-283",
+                  "ap2ID": "id-287"
+                },
+                {
+                  "ap2Name": "geometry2",
+                  "ap1ID": "id-287",
+                  "ap2ID": "id-293"
+                },
+                {
+                  "ap2Name": "retain",
+                  "ap1ID": "id-293",
+                  "ap2ID": "id-306"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-297",
+                  "ap2ID": "id-300"
+                },
+                {
+                  "ap2Name": "remove",
+                  "ap1ID": "id-300",
+                  "ap2ID": "id-306"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-306",
+                  "ap2ID": "id-310"
+                },
+                {
+                  "ap2Name": "geometry1",
+                  "ap1ID": "id-310",
+                  "ap2ID": "id-337"
+                },
+                {
+                  "ap2Name": "geometry2",
+                  "ap1ID": "id-314",
+                  "ap2ID": "id-337"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-337",
+                  "ap2ID": "id-278"
+                }
+              ],
+              "fileTypeVersion": 1
+            },
+            {
+              "atomType": "Molecule",
+              "x": 0.3,
+              "y": 0.7,
+              "uniqueID": "id-341",
+              "name": "Socket",
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-343",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Circle",
+                  "x": 0.2,
+                  "y": 0.5,
+                  "uniqueID": "id-345",
+                  "ioValues": [
+                    {
+                      "name": "diameter",
+                      "ioValue": 63.5,
+                      "currentEquation": "SocketOD"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.4,
+                  "y": 0.5,
+                  "uniqueID": "id-348",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 44.3
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Rotate",
+                  "x": 0.6,
+                  "y": 0.5,
+                  "uniqueID": "id-352",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "x-axis degrees",
+                      "ioValue": 90
+                    },
+                    {
+                      "name": "y-axis degrees",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "z-axis degrees",
+                      "ioValue": 0
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.8,
+                  "y": 0.5,
+                  "uniqueID": "id-358",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": -55
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": 37.25,
+                      "currentEquation": "max(25, SocketOD / 2 + 5.5)"
+                    }
+                  ]
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-345",
+                  "ap2ID": "id-348"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-348",
+                  "ap2ID": "id-352"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-352",
+                  "ap2ID": "id-358"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-358",
+                  "ap2ID": "id-343"
+                }
+              ],
+              "fileTypeVersion": 1
+            },
+            {
+              "atomType": "Fusion",
+              "x": 0.6,
+              "y": 0.5,
+              "uniqueID": "id-364",
+              "ioValues": [
+                {
+                  "name": "Shape 1",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape2",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape3",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "unionType": "Fusion"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "Opening",
+              "ap1ID": "id-249",
+              "ap2ID": "id-252"
+            },
+            {
+              "ap2Name": "Shape 1",
+              "ap1ID": "id-252",
+              "ap2ID": "id-364"
+            },
+            {
+              "ap2Name": "Shape2",
+              "ap1ID": "id-276",
+              "ap2ID": "id-364"
+            },
+            {
+              "ap2Name": "Shape3",
+              "ap1ID": "id-341",
+              "ap2ID": "id-364"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-364",
+              "ap2ID": "id-247"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.4,
+          "y": 0.7,
+          "uniqueID": "id-370",
+          "name": "Inner Space",
+          "ioValues": [
+            {
+              "name": "Opening",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-372",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Input",
+              "x": 0,
+              "y": 0.2,
+              "uniqueID": "id-374",
+              "name": "Opening",
+              "type": "geometry",
+              "options": []
+            },
+            {
+              "atomType": "Molecule",
+              "x": 0.3,
+              "y": 0.2,
+              "uniqueID": "id-377",
+              "name": "Hood Cavity",
+              "ioValues": [
+                {
+                  "name": "Opening",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-379",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Input",
+                  "x": 0,
+                  "y": 0.2,
+                  "uniqueID": "id-381",
+                  "name": "Opening",
+                  "type": "geometry",
+                  "options": []
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.3,
+                  "y": 0.3,
+                  "uniqueID": "id-384",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 41
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.5,
+                  "y": 0.3,
+                  "uniqueID": "id-388",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": -1
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Circle",
+                  "x": 0.1,
+                  "y": 0.7,
+                  "uniqueID": "id-394",
+                  "ioValues": [
+                    {
+                      "name": "diameter",
+                      "ioValue": 356
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.3,
+                  "y": 0.7,
+                  "uniqueID": "id-397",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 300
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Rotate",
+                  "x": 0.4,
+                  "y": 0.7,
+                  "uniqueID": "id-401",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "x-axis degrees",
+                      "ioValue": 90
+                    },
+                    {
+                      "name": "y-axis degrees",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "z-axis degrees",
+                      "ioValue": 0
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.6,
+                  "y": 0.7,
+                  "uniqueID": "id-407",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": 150
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": -157.5
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Intersection",
+                  "x": 0.8,
+                  "y": 0.5,
+                  "uniqueID": "id-413",
+                  "ioValues": [
+                    {
+                      "name": "geometry1",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "geometry2",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-381",
+                  "ap2ID": "id-384"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-384",
+                  "ap2ID": "id-388"
+                },
+                {
+                  "ap2Name": "geometry1",
+                  "ap1ID": "id-388",
+                  "ap2ID": "id-413"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-394",
+                  "ap2ID": "id-397"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-397",
+                  "ap2ID": "id-401"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-401",
+                  "ap2ID": "id-407"
+                },
+                {
+                  "ap2Name": "geometry2",
+                  "ap1ID": "id-407",
+                  "ap2ID": "id-413"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-413",
+                  "ap2ID": "id-379"
+                }
+              ],
+              "fileTypeVersion": 1
+            },
+            {
+              "atomType": "Molecule",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-417",
+              "name": "Socket Bore",
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-419",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Circle",
+                  "x": 0.2,
+                  "y": 0.5,
+                  "uniqueID": "id-421",
+                  "ioValues": [
+                    {
+                      "name": "diameter",
+                      "ioValue": 59.5,
+                      "currentEquation": "SocketOD - 4"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.4,
+                  "y": 0.5,
+                  "uniqueID": "id-424",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 43.3
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Rotate",
+                  "x": 0.6,
+                  "y": 0.5,
+                  "uniqueID": "id-428",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "x-axis degrees",
+                      "ioValue": 90
+                    },
+                    {
+                      "name": "y-axis degrees",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "z-axis degrees",
+                      "ioValue": 0
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.8,
+                  "y": 0.5,
+                  "uniqueID": "id-434",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": -57
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": 37.25,
+                      "currentEquation": "max(25, SocketOD / 2 + 5.5)"
+                    }
+                  ]
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-421",
+                  "ap2ID": "id-424"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-424",
+                  "ap2ID": "id-428"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-428",
+                  "ap2ID": "id-434"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-434",
+                  "ap2ID": "id-419"
+                }
+              ],
+              "fileTypeVersion": 1
+            },
+            {
+              "atomType": "Molecule",
+              "x": 0.3,
+              "y": 0.7,
+              "uniqueID": "id-440",
+              "name": "Mounting Holes",
+              "topLevel": false,
+              "allAtoms": [
+                {
+                  "atomType": "Output",
+                  "x": 1,
+                  "y": 0.5,
+                  "uniqueID": "id-442",
+                  "ioValues": [
+                    {
+                      "name": "number or geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Circle",
+                  "x": 0.1,
+                  "y": 0.3,
+                  "uniqueID": "id-444",
+                  "ioValues": [
+                    {
+                      "name": "diameter",
+                      "ioValue": 3.5
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.2,
+                  "y": 0.3,
+                  "uniqueID": "id-447",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 6
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.4,
+                  "y": 0.2,
+                  "uniqueID": "id-451",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 81.76
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": -11
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": -3
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.4,
+                  "y": 0.4,
+                  "uniqueID": "id-457",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 67.1
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": -48
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": -3
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Circle",
+                  "x": 0.1,
+                  "y": 0.7,
+                  "uniqueID": "id-463",
+                  "ioValues": [
+                    {
+                      "name": "diameter",
+                      "ioValue": 3.9
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Extrude",
+                  "x": 0.2,
+                  "y": 0.7,
+                  "uniqueID": "id-466",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "height",
+                      "ioValue": 6
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.4,
+                  "y": 0.7,
+                  "uniqueID": "id-470",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": 28.84
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": 5
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": -3
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Fusion",
+                  "x": 0.5,
+                  "y": 0.4,
+                  "uniqueID": "id-476",
+                  "ioValues": [
+                    {
+                      "name": "Shape 1",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Shape2",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Shape3",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ],
+                  "unionType": "Fusion"
+                },
+                {
+                  "atomType": "Rotate",
+                  "x": 0.7,
+                  "y": 0.6,
+                  "uniqueID": "id-482",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "x-axis degrees",
+                      "ioValue": 0
+                    },
+                    {
+                      "name": "y-axis degrees",
+                      "ioValue": 180
+                    },
+                    {
+                      "name": "z-axis degrees",
+                      "ioValue": 0
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Fusion",
+                  "x": 0.8,
+                  "y": 0.5,
+                  "uniqueID": "id-488",
+                  "ioValues": [
+                    {
+                      "name": "Shape 1",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "Shape2",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    }
+                  ],
+                  "unionType": "Fusion"
+                }
+              ],
+              "allConnectors": [
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-444",
+                  "ap2ID": "id-447"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-447",
+                  "ap2ID": "id-451"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-447",
+                  "ap2ID": "id-457"
+                },
+                {
+                  "ap2Name": "Shape 1",
+                  "ap1ID": "id-451",
+                  "ap2ID": "id-476"
+                },
+                {
+                  "ap2Name": "Shape2",
+                  "ap1ID": "id-457",
+                  "ap2ID": "id-476"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-463",
+                  "ap2ID": "id-466"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-466",
+                  "ap2ID": "id-470"
+                },
+                {
+                  "ap2Name": "Shape3",
+                  "ap1ID": "id-470",
+                  "ap2ID": "id-476"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-476",
+                  "ap2ID": "id-482"
+                },
+                {
+                  "ap2Name": "Shape 1",
+                  "ap1ID": "id-476",
+                  "ap2ID": "id-488"
+                },
+                {
+                  "ap2Name": "Shape2",
+                  "ap1ID": "id-482",
+                  "ap2ID": "id-488"
+                },
+                {
+                  "ap2Name": "number or geometry",
+                  "ap1ID": "id-488",
+                  "ap2ID": "id-442"
+                }
+              ],
+              "fileTypeVersion": 1
+            },
+            {
+              "atomType": "Fusion",
+              "x": 0.6,
+              "y": 0.5,
+              "uniqueID": "id-493",
+              "ioValues": [
+                {
+                  "name": "Shape 1",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape2",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "Shape3",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ],
+              "unionType": "Fusion"
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "Opening",
+              "ap1ID": "id-374",
+              "ap2ID": "id-377"
+            },
+            {
+              "ap2Name": "Shape 1",
+              "ap1ID": "id-377",
+              "ap2ID": "id-493"
+            },
+            {
+              "ap2Name": "Shape2",
+              "ap1ID": "id-417",
+              "ap2ID": "id-493"
+            },
+            {
+              "ap2Name": "Shape3",
+              "ap1ID": "id-440",
+              "ap2ID": "id-493"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-493",
+              "ap2ID": "id-372"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Difference",
+          "x": 0.6,
+          "y": 0.5,
+          "uniqueID": "id-499",
+          "ioValues": [
+            {
+              "name": "retain",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "remove",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Color",
+          "x": 0.8,
+          "y": 0.5,
+          "uniqueID": "id-503",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ],
+          "selectedColor": "Light Blue"
+        },
+        {
+          "atomType": "Export",
+          "x": 0.8,
+          "y": 0.8,
+          "uniqueID": "id-506",
+          "ioValues": [
+            {
+              "name": "geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "File Type",
+              "ioValue": "STEP",
+              "currentEquation": "STEP"
+            },
+            {
+              "name": "Resolution (dpi)",
+              "ioValue": 96
+            },
+            {
+              "name": "STL Tolerance",
+              "ioValue": 0.05
+            },
+            {
+              "name": "Part Name",
+              "ioValue": "Dust Hose Adapter",
+              "currentEquation": "Dust Hose Adapter"
+            }
+          ],
+          "type": null,
+          "resolution": 96,
+          "importIndex": 0,
+          "partName": "Dust Hose Adapter"
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "Opening",
+          "ap1ID": "id-232",
+          "ap2ID": "id-245"
+        },
+        {
+          "ap2Name": "Opening",
+          "ap1ID": "id-232",
+          "ap2ID": "id-370"
+        },
+        {
+          "ap2Name": "retain",
+          "ap1ID": "id-245",
+          "ap2ID": "id-499"
+        },
+        {
+          "ap2Name": "remove",
+          "ap1ID": "id-370",
+          "ap2ID": "id-499"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-499",
+          "ap2ID": "id-503"
+        },
+        {
+          "ap2Name": "geometry",
+          "ap1ID": "id-499",
+          "ap2ID": "id-506"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-503",
+          "ap2ID": "id-197"
+        }
+      ],
+      "fileTypeVersion": 1
+    },
+    {
+      "atomType": "Output",
+      "x": 1,
+      "y": 0.5,
+      "uniqueID": "id-4",
+      "ioValues": [
+        {
+          "name": "number or geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        }
+      ]
+    },
+    {
+      "atomType": "Input",
+      "x": 0,
+      "y": 0.2,
+      "uniqueID": "id-515",
+      "name": "Hose Size",
+      "type": "dropdown",
+      "options": [
+        "2.5 in (63.5 mm)",
+        "1.25 in (31.75 mm)",
+        "1.5 in (38.1 mm)",
+        "Festool 40 mm (40 mm)",
+        "2 in (50.8 mm)",
+        "2.31 in (58.7 mm)",
+        "4 in (101.6 mm)"
+      ]
+    },
+    {
+      "atomType": "Molecule",
+      "x": 0.3,
+      "y": 0.7,
+      "uniqueID": "id-6",
+      "name": "Reference Adapters",
+      "topLevel": false,
+      "allAtoms": [
+        {
+          "atomType": "Molecule",
+          "x": 0.2,
+          "y": 0.1,
+          "uniqueID": "id-10",
+          "name": "1.25 in Adapter",
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-12",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Import",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-14",
+              "fileName": "Dust Hose 1.25.step",
+              "name": "Import",
+              "type": "STEP",
+              "repoOwner": "MaslowCNC",
+              "repoName": "Maslow4",
+              "gitRef": "main",
+              "SVGwidth": 10
+            },
+            {
+              "atomType": "Move",
+              "x": 0.6,
+              "y": 0.5,
+              "uniqueID": "id-16",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": -750
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-14",
+              "ap2ID": "id-16"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-16",
+              "ap2ID": "id-12"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.2,
+          "y": 0.2,
+          "uniqueID": "id-22",
+          "name": "1.5 in Adapter",
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-24",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Import",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-26",
+              "fileName": "Dust Hose 1.5.step",
+              "name": "Import",
+              "type": "STEP",
+              "repoOwner": "MaslowCNC",
+              "repoName": "Maslow4",
+              "gitRef": "main",
+              "SVGwidth": 10
+            },
+            {
+              "atomType": "Move",
+              "x": 0.6,
+              "y": 0.5,
+              "uniqueID": "id-28",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": -500
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-26",
+              "ap2ID": "id-28"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-28",
+              "ap2ID": "id-24"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.2,
+          "y": 0.3,
+          "uniqueID": "id-34",
+          "name": "40 mm Festool Adapter",
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-36",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Import",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-38",
+              "fileName": "Dust Hose 40mm (Festool).step",
+              "name": "Import",
+              "type": "STEP",
+              "repoOwner": "MaslowCNC",
+              "repoName": "Maslow4",
+              "gitRef": "main",
+              "SVGwidth": 10
+            },
+            {
+              "atomType": "Move",
+              "x": 0.6,
+              "y": 0.5,
+              "uniqueID": "id-40",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": -250
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-38",
+              "ap2ID": "id-40"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-40",
+              "ap2ID": "id-36"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.2,
+          "y": 0.5,
+          "uniqueID": "id-46",
+          "name": "2 in Adapter",
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-48",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Import",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-50",
+              "fileName": "Dust Hose 2.step",
+              "name": "Import",
+              "type": "STEP",
+              "repoOwner": "MaslowCNC",
+              "repoName": "Maslow4",
+              "gitRef": "main",
+              "SVGwidth": 10
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-50",
+              "ap2ID": "id-48"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.2,
+          "y": 0.6,
+          "uniqueID": "id-52",
+          "name": "2.31 in Adapter",
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-54",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Import",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-56",
+              "fileName": "Dust Hose 2.31.step",
+              "name": "Import",
+              "type": "STEP",
+              "repoOwner": "MaslowCNC",
+              "repoName": "Maslow4",
+              "gitRef": "main",
+              "SVGwidth": 10
+            },
+            {
+              "atomType": "Move",
+              "x": 0.6,
+              "y": 0.5,
+              "uniqueID": "id-58",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 250
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-56",
+              "ap2ID": "id-58"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-58",
+              "ap2ID": "id-54"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.2,
+          "y": 0.7,
+          "uniqueID": "id-64",
+          "name": "2.5 in Adapter",
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-66",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Import",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-68",
+              "fileName": "Dust Hose 2.5in.step",
+              "name": "Import",
+              "type": "STEP",
+              "repoOwner": "MaslowCNC",
+              "repoName": "Maslow4",
+              "gitRef": "main",
+              "SVGwidth": 10
+            },
+            {
+              "atomType": "Move",
+              "x": 0.6,
+              "y": 0.5,
+              "uniqueID": "id-70",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 500
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-68",
+              "ap2ID": "id-70"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-70",
+              "ap2ID": "id-66"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Molecule",
+          "x": 0.2,
+          "y": 0.8,
+          "uniqueID": "id-76",
+          "name": "4 in Adapter",
+          "topLevel": false,
+          "allAtoms": [
+            {
+              "atomType": "Output",
+              "x": 1,
+              "y": 0.5,
+              "uniqueID": "id-78",
+              "ioValues": [
+                {
+                  "name": "number or geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                }
+              ]
+            },
+            {
+              "atomType": "Import",
+              "x": 0.3,
+              "y": 0.5,
+              "uniqueID": "id-80",
+              "fileName": "Dust Hose 4in.step",
+              "name": "Import",
+              "type": "STEP",
+              "repoOwner": "MaslowCNC",
+              "repoName": "Maslow4",
+              "gitRef": "main",
+              "SVGwidth": 10
+            },
+            {
+              "atomType": "Move",
+              "x": 0.6,
+              "y": 0.5,
+              "uniqueID": "id-82",
+              "ioValues": [
+                {
+                  "name": "geometry",
+                  "ioValue": "__GEOMETRY_INPUT__"
+                },
+                {
+                  "name": "xDist",
+                  "ioValue": 750
+                },
+                {
+                  "name": "yDist",
+                  "ioValue": 0
+                },
+                {
+                  "name": "zDist",
+                  "ioValue": 0
+                }
+              ]
+            }
+          ],
+          "allConnectors": [
+            {
+              "ap2Name": "geometry",
+              "ap1ID": "id-80",
+              "ap2ID": "id-82"
+            },
+            {
+              "ap2Name": "number or geometry",
+              "ap1ID": "id-82",
+              "ap2ID": "id-78"
+            }
+          ],
+          "fileTypeVersion": 1
+        },
+        {
+          "atomType": "Output",
+          "x": 1,
+          "y": 0.5,
+          "uniqueID": "id-8",
+          "ioValues": [
+            {
+              "name": "number or geometry",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        },
+        {
+          "atomType": "Assembly",
+          "x": 0.6,
+          "y": 0.5,
+          "uniqueID": "id-88",
+          "ioValues": [
+            {
+              "name": "makeDisjoint",
+              "ioValue": false
+            },
+            {
+              "name": "Shape 1",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape2",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape3",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape4",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape5",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape6",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape7",
+              "ioValue": "__GEOMETRY_INPUT__"
+            },
+            {
+              "name": "Shape8",
+              "ioValue": "__GEOMETRY_INPUT__"
+            }
+          ]
+        }
+      ],
+      "allConnectors": [
+        {
+          "ap2Name": "Shape 1",
+          "ap1ID": "id-10",
+          "ap2ID": "id-88"
+        },
+        {
+          "ap2Name": "Shape2",
+          "ap1ID": "id-22",
+          "ap2ID": "id-88"
+        },
+        {
+          "ap2Name": "Shape3",
+          "ap1ID": "id-34",
+          "ap2ID": "id-88"
+        },
+        {
+          "ap2Name": "Shape4",
+          "ap1ID": "id-46",
+          "ap2ID": "id-88"
+        },
+        {
+          "ap2Name": "Shape5",
+          "ap1ID": "id-52",
+          "ap2ID": "id-88"
+        },
+        {
+          "ap2Name": "Shape6",
+          "ap1ID": "id-64",
+          "ap2ID": "id-88"
+        },
+        {
+          "ap2Name": "Shape7",
+          "ap1ID": "id-76",
+          "ap2ID": "id-88"
+        },
+        {
+          "ap2Name": "number or geometry",
+          "ap1ID": "id-88",
+          "ap2ID": "id-8"
+        }
+      ],
+      "fileTypeVersion": 1
+    }
+  ],
+  "allConnectors": [],
+  "unitsKey": "MM",
+  "fileTypeVersion": 1,
+  "filetypeVersion": 1
 }
