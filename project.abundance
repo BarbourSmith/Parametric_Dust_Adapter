@@ -7,7 +7,8 @@
   "ioValues": [
     {
       "name": "Hose Size",
-      "ioValue": 10
+      "ioValue": "Festool 40 mm (40 mm)",
+      "currentEquation": "Festool 40 mm (40 mm)"
     }
   ],
   "topLevel": true,
@@ -2157,7 +2158,13 @@
       "fileTypeVersion": 1
     }
   ],
-  "allConnectors": [],
+  "allConnectors": [
+    {
+      "ap2Name": "number or geometry",
+      "ap1ID": "id-195",
+      "ap2ID": "id-4"
+    }
+  ],
   "unitsKey": "MM",
   "fileTypeVersion": 1,
   "filetypeVersion": 1

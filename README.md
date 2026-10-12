@@ -6,7 +6,7 @@
 
 ## Inputs
 
-- **Hose Size** (dropdown)
+- **Hose Size** (string)
 
 
 
