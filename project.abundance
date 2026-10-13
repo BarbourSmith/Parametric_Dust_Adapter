@@ -162,8 +162,8 @@
                   "y": 0.3,
                   "uniqueID": "id-259",
                   "interpreterVersion": 1,
-                  "code": "/**\n * Footprint of the dust hose adapter where it sits on the sled: the\n * horseshoe around the router opening, the four mounting tabs with their\n * 2 mm fillets, and the two dust cover bolt bosses. Traced from the bottom\n * face of the Maslow4 adapter STEP files, which all share it.\n */\nfunction run(): Assembly {\n  type Pt = [number, number];\n  // Right half, from where the right boss meets the r16 arc round to the\n  // back, as [end point, point on the arc] pairs; null is a straight line.\n  const start: Pt = [33.14, 7.56];\n  const right: [Pt, Pt | null][] = [\n    [[46.73, 0], [38.95, 2.02]], // concave r16 arc beside the boss\n    [[79.54, 0], null], // front edge\n    [[79.42, -4.36], null], // outer edge (r79.54, tiny)\n    [[81.52, -6.46], [80.0, -5.88]], // fillet r2\n    [[80.33, -15.31], [86.26, -11.61]], // front tab r4.54\n    [[77.75, -16.79], [78.71, -15.48]], // fillet r2\n    [[68.14, -41.03], [73.96, -29.28]], // outer edge r79.54\n    [[69.01, -43.88], [67.94, -42.65]], // fillet r2\n    [[63.82, -51.14], [70.79, -50.64]], // rear tab r4.54\n    [[60.84, -51.23], [62.31, -50.52]], // fillet r2\n    [[18.81, -77.29], [41.91, -67.6]], // outer edge r79.54\n  ];\n  const mirror = (p: Pt): Pt => [-p[0], p[1]];\n\n  // Router side: left boss, then the long way round the r29.41 router\n  // circle to the right boss. (The original also has a 0.1 mm r39 arc\n  // beside each boss; it is left out to avoid a sliver face.)\n  let pen = replicad\n    .draw([-23.93, 4.09])\n    .threePointsArcTo([23.93, 4.09], [0, -42.41])\n    .threePointsArcTo(start, [27.03, 9.66]); // right boss r5\n\n  for (const [end, mid] of right) {\n    pen = mid ? pen.threePointsArcTo(end, mid) : pen.lineTo(end);\n  }\n  // Back edge under the hose socket.\n  pen = pen.threePointsArcTo([-18.81, -77.29], [0, -80.3]);\n  // Left half: the right half's segments mirrored and in reverse.\n  const starts: Pt[] = [start, ...right.map(([end]) => end)];\n  for (let i = right.length - 1; i >= 0; i--) {\n    const [, mid] = right[i];\n    const end = mirror(starts[i]);\n    pen = mid ? pen.threePointsArcTo(end, mirror(mid)) : pen.lineTo(end);\n  }\n  const outline = pen\n    .threePointsArcTo([-23.93, 4.09], [-27.03, 9.66]) // left boss r5\n    .close();\n  return new Assembly({ geometry: outline });\n}\n",
-                  "compiledCode": "\"use strict\";\n/**\n * Footprint of the dust hose adapter where it sits on the sled: the\n * horseshoe around the router opening, the four mounting tabs with their\n * 2 mm fillets, and the two dust cover bolt bosses. Traced from the bottom\n * face of the Maslow4 adapter STEP files, which all share it.\n */\nfunction run() {\n    // Right half, from where the right boss meets the r16 arc round to the\n    // back, as [end point, point on the arc] pairs; null is a straight line.\n    const start = [33.14, 7.56];\n    const right = [\n        [[46.73, 0], [38.95, 2.02]], // concave r16 arc beside the boss\n        [[79.54, 0], null], // front edge\n        [[79.42, -4.36], null], // outer edge (r79.54, tiny)\n        [[81.52, -6.46], [80.0, -5.88]], // fillet r2\n        [[80.33, -15.31], [86.26, -11.61]], // front tab r4.54\n        [[77.75, -16.79], [78.71, -15.48]], // fillet r2\n        [[68.14, -41.03], [73.96, -29.28]], // outer edge r79.54\n        [[69.01, -43.88], [67.94, -42.65]], // fillet r2\n        [[63.82, -51.14], [70.79, -50.64]], // rear tab r4.54\n        [[60.84, -51.23], [62.31, -50.52]], // fillet r2\n        [[18.81, -77.29], [41.91, -67.6]], // outer edge r79.54\n    ];\n    const mirror = (p) => [-p[0], p[1]];\n    // Router side: left boss, then the long way round the r29.41 router\n    // circle to the right boss. (The original also has a 0.1 mm r39 arc\n    // beside each boss; it is left out to avoid a sliver face.)\n    let pen = replicad\n        .draw([-23.93, 4.09])\n        .threePointsArcTo([23.93, 4.09], [0, -42.41])\n        .threePointsArcTo(start, [27.03, 9.66]); // right boss r5\n    for (const [end, mid] of right) {\n        pen = mid ? pen.threePointsArcTo(end, mid) : pen.lineTo(end);\n    }\n    // Back edge under the hose socket.\n    pen = pen.threePointsArcTo([-18.81, -77.29], [0, -80.3]);\n    // Left half: the right half's segments mirrored and in reverse.\n    const starts = [start, ...right.map(([end]) => end)];\n    for (let i = right.length - 1; i >= 0; i--) {\n        const [, mid] = right[i];\n        const end = mirror(starts[i]);\n        pen = mid ? pen.threePointsArcTo(end, mirror(mid)) : pen.lineTo(end);\n    }\n    const outline = pen\n        .threePointsArcTo([-23.93, 4.09], [-27.03, 9.66]) // left boss r5\n        .close();\n    return new Assembly({ geometry: outline });\n}\n"
+                  "code": "/**\n * Footprint of the dust hose adapter where it sits on the sled: the\n * horseshoe around the router opening, the four mounting tabs with their\n * 2 mm fillets, and the two dust cover bolt bosses. Traced from the bottom\n * face of the Maslow4 adapter STEP files, which all share it.\n *\n * Where the outline runs along the hood's outer wall (r79.54) or its router\n * cut (r29.41 about [0, -13]), its points are snapped exactly onto those\n * circles. The traced points are rounded to 0.01 mm, and edges that miss the\n * hood's walls by a few microns leave zero-width faces when the two are\n * fused, which mesh with holes in them.\n */\nfunction run(): Assembly {\n  type Pt = [number, number];\n  const hoodR = 159.08 / 2; // hood outer wall, about the origin\n  const routerC: Pt = [0, -13]; // router cut in the hood\n  const routerR = 58.82 / 2;\n  const snap = (p: Pt, c: Pt = [0, 0], r = hoodR): Pt => {\n    const a = Math.atan2(p[1] - c[1], p[0] - c[0]);\n    return [c[0] + r * Math.cos(a), c[1] + r * Math.sin(a)];\n  };\n\n  // Right half, from where the right boss meets the r16 arc round to the\n  // back, as [end point, point on the arc] pairs; null is a straight line.\n  const start: Pt = [33.14, 7.56];\n  const right: [Pt, Pt | null][] = [\n    [[46.73, 0], [38.95, 2.02]], // concave r16 arc beside the boss\n    [[79.54, 0], null], // front edge\n    [snap([79.42, -4.36]), snap([79.5, -2.18])], // outer edge (r79.54, tiny)\n    [[81.52, -6.46], [80.0, -5.88]], // fillet r2\n    [[80.33, -15.31], [86.26, -11.61]], // front tab r4.54\n    [snap([77.75, -16.79]), [78.71, -15.48]], // fillet r2\n    [snap([68.14, -41.03]), snap([73.96, -29.28])], // outer edge r79.54\n    [[69.01, -43.88], [67.94, -42.65]], // fillet r2\n    [[63.82, -51.14], [70.79, -50.64]], // rear tab r4.54\n    [snap([60.84, -51.23]), [62.31, -50.52]], // fillet r2\n    [snap([18.81, -77.29]), snap([41.91, -67.6])], // outer edge r79.54\n  ];\n  const mirror = (p: Pt): Pt => [-p[0], p[1]];\n  // Where the right boss meets the router cut.\n  const routerEnd = snap([23.93, 4.09], routerC, routerR);\n\n  // Router side: left boss, then the long way round the r29.41 router\n  // circle to the right boss. (The original also has a 0.1 mm r39 arc\n  // beside each boss; it is left out to avoid a sliver face.)\n  let pen = replicad\n    .draw(mirror(routerEnd))\n    .threePointsArcTo(routerEnd, [routerC[0], routerC[1] - routerR])\n    .threePointsArcTo(start, [27.03, 9.66]); // right boss r5\n\n  for (const [end, mid] of right) {\n    pen = mid ? pen.threePointsArcTo(end, mid) : pen.lineTo(end);\n  }\n  // Back edge under the hose socket.\n  pen = pen.threePointsArcTo(mirror(right[right.length - 1][0]), [0, -80.3]);\n  // Left half: the right half's segments mirrored and in reverse.\n  const starts: Pt[] = [start, ...right.map(([end]) => end)];\n  for (let i = right.length - 1; i >= 0; i--) {\n    const [, mid] = right[i];\n    const end = mirror(starts[i]);\n    pen = mid ? pen.threePointsArcTo(end, mirror(mid)) : pen.lineTo(end);\n  }\n  const outline = pen\n    .threePointsArcTo(mirror(routerEnd), [-27.03, 9.66]) // left boss r5\n    .close();\n  return new Assembly({ geometry: outline });\n}\n",
+                  "compiledCode": "\"use strict\";\n/**\n * Footprint of the dust hose adapter where it sits on the sled: the\n * horseshoe around the router opening, the four mounting tabs with their\n * 2 mm fillets, and the two dust cover bolt bosses. Traced from the bottom\n * face of the Maslow4 adapter STEP files, which all share it.\n *\n * Where the outline runs along the hood's outer wall (r79.54) or its router\n * cut (r29.41 about [0, -13]), its points are snapped exactly onto those\n * circles. The traced points are rounded to 0.01 mm, and edges that miss the\n * hood's walls by a few microns leave zero-width faces when the two are\n * fused, which mesh with holes in them.\n */\nfunction run() {\n    const hoodR = 159.08 / 2; // hood outer wall, about the origin\n    const routerC = [0, -13]; // router cut in the hood\n    const routerR = 58.82 / 2;\n    const snap = (p, c = [0, 0], r = hoodR) => {\n        const a = Math.atan2(p[1] - c[1], p[0] - c[0]);\n        return [c[0] + r * Math.cos(a), c[1] + r * Math.sin(a)];\n    };\n    // Right half, from where the right boss meets the r16 arc round to the\n    // back, as [end point, point on the arc] pairs; null is a straight line.\n    const start = [33.14, 7.56];\n    const right = [\n        [[46.73, 0], [38.95, 2.02]], // concave r16 arc beside the boss\n        [[79.54, 0], null], // front edge\n        [snap([79.42, -4.36]), snap([79.5, -2.18])], // outer edge (r79.54, tiny)\n        [[81.52, -6.46], [80.0, -5.88]], // fillet r2\n        [[80.33, -15.31], [86.26, -11.61]], // front tab r4.54\n        [snap([77.75, -16.79]), [78.71, -15.48]], // fillet r2\n        [snap([68.14, -41.03]), snap([73.96, -29.28])], // outer edge r79.54\n        [[69.01, -43.88], [67.94, -42.65]], // fillet r2\n        [[63.82, -51.14], [70.79, -50.64]], // rear tab r4.54\n        [snap([60.84, -51.23]), [62.31, -50.52]], // fillet r2\n        [snap([18.81, -77.29]), snap([41.91, -67.6])], // outer edge r79.54\n    ];\n    const mirror = (p) => [-p[0], p[1]];\n    // Where the right boss meets the router cut.\n    const routerEnd = snap([23.93, 4.09], routerC, routerR);\n    // Router side: left boss, then the long way round the r29.41 router\n    // circle to the right boss. (The original also has a 0.1 mm r39 arc\n    // beside each boss; it is left out to avoid a sliver face.)\n    let pen = replicad\n        .draw(mirror(routerEnd))\n        .threePointsArcTo(routerEnd, [routerC[0], routerC[1] - routerR])\n        .threePointsArcTo(start, [27.03, 9.66]); // right boss r5\n    for (const [end, mid] of right) {\n        pen = mid ? pen.threePointsArcTo(end, mid) : pen.lineTo(end);\n    }\n    // Back edge under the hose socket.\n    pen = pen.threePointsArcTo(mirror(right[right.length - 1][0]), [0, -80.3]);\n    // Left half: the right half's segments mirrored and in reverse.\n    const starts = [start, ...right.map(([end]) => end)];\n    for (let i = right.length - 1; i >= 0; i--) {\n        const [, mid] = right[i];\n        const end = mirror(starts[i]);\n        pen = mid ? pen.threePointsArcTo(end, mirror(mid)) : pen.lineTo(end);\n    }\n    const outline = pen\n        .threePointsArcTo(mirror(routerEnd), [-27.03, 9.66]) // left boss r5\n        .close();\n    return new Assembly({ geometry: outline });\n}\n"
                 },
                 {
                   "atomType": "Difference",
@@ -1973,6 +1973,78 @@
               "topLevel": false,
               "allAtoms": [
                 {
+                  "atomType": "Move",
+                  "x": 0.6,
+                  "y": 0.4,
+                  "uniqueID": "id-1444",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": -81.76
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": -11
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": -3
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.7,
+                  "y": 0.6,
+                  "uniqueID": "id-1450",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": -67.1
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": -48
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": -3
+                    }
+                  ]
+                },
+                {
+                  "atomType": "Move",
+                  "x": 0.7,
+                  "y": 0.7,
+                  "uniqueID": "id-1456",
+                  "ioValues": [
+                    {
+                      "name": "geometry",
+                      "ioValue": "__GEOMETRY_INPUT__"
+                    },
+                    {
+                      "name": "xDist",
+                      "ioValue": -28.84
+                    },
+                    {
+                      "name": "yDist",
+                      "ioValue": 5
+                    },
+                    {
+                      "name": "zDist",
+                      "ioValue": -3
+                    }
+                  ]
+                },
+                {
                   "atomType": "Output",
                   "x": 1,
                   "y": 0.5,
@@ -2129,46 +2201,17 @@
                     {
                       "name": "Shape3",
                       "ioValue": "__GEOMETRY_INPUT__"
-                    }
-                  ],
-                  "unionType": "Fusion"
-                },
-                {
-                  "atomType": "Rotate",
-                  "x": 0.7,
-                  "y": 0.6,
-                  "uniqueID": "id-482",
-                  "ioValues": [
+                    },
                     {
-                      "name": "geometry",
+                      "name": "Shape4",
                       "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
-                      "name": "x-axis degrees",
-                      "ioValue": 0
-                    },
-                    {
-                      "name": "y-axis degrees",
-                      "ioValue": 180
-                    },
-                    {
-                      "name": "z-axis degrees",
-                      "ioValue": 0
-                    }
-                  ]
-                },
-                {
-                  "atomType": "Fusion",
-                  "x": 0.8,
-                  "y": 0.5,
-                  "uniqueID": "id-488",
-                  "ioValues": [
-                    {
-                      "name": "Shape 1",
+                      "name": "Shape5",
                       "ioValue": "__GEOMETRY_INPUT__"
                     },
                     {
-                      "name": "Shape2",
+                      "name": "Shape6",
                       "ioValue": "__GEOMETRY_INPUT__"
                     }
                   ],
@@ -2177,9 +2220,34 @@
               ],
               "allConnectors": [
                 {
+                  "ap2Name": "Shape4",
+                  "ap1ID": "id-1444",
+                  "ap2ID": "id-476"
+                },
+                {
+                  "ap2Name": "Shape5",
+                  "ap1ID": "id-1450",
+                  "ap2ID": "id-476"
+                },
+                {
+                  "ap2Name": "Shape6",
+                  "ap1ID": "id-1456",
+                  "ap2ID": "id-476"
+                },
+                {
                   "ap2Name": "geometry",
                   "ap1ID": "id-444",
                   "ap2ID": "id-447"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-447",
+                  "ap2ID": "id-1444"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-447",
+                  "ap2ID": "id-1450"
                 },
                 {
                   "ap2Name": "geometry",
@@ -2209,6 +2277,11 @@
                 {
                   "ap2Name": "geometry",
                   "ap1ID": "id-466",
+                  "ap2ID": "id-1456"
+                },
+                {
+                  "ap2Name": "geometry",
+                  "ap1ID": "id-466",
                   "ap2ID": "id-470"
                 },
                 {
@@ -2217,23 +2290,8 @@
                   "ap2ID": "id-476"
                 },
                 {
-                  "ap2Name": "geometry",
-                  "ap1ID": "id-476",
-                  "ap2ID": "id-482"
-                },
-                {
-                  "ap2Name": "Shape 1",
-                  "ap1ID": "id-476",
-                  "ap2ID": "id-488"
-                },
-                {
-                  "ap2Name": "Shape2",
-                  "ap1ID": "id-482",
-                  "ap2ID": "id-488"
-                },
-                {
                   "ap2Name": "number or geometry",
-                  "ap1ID": "id-488",
+                  "ap1ID": "id-476",
                   "ap2ID": "id-442"
                 }
               ],
