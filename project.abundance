@@ -7,7 +7,8 @@
   "ioValues": [
     {
       "name": "Hose_Size_mm",
-      "ioValue": 40
+      "ioValue": 40,
+      "currentEquation": "40"
     }
   ],
   "topLevel": true,
