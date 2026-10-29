@@ -7,12 +7,45 @@
   "ioValues": [
     {
       "name": "Hose_Size_mm",
-      "ioValue": 40,
-      "currentEquation": "40"
+      "ioValue": 40
     }
   ],
   "topLevel": true,
   "allAtoms": [
+    {
+      "atomType": "Export",
+      "x": 0.6,
+      "y": 0.6,
+      "uniqueID": "id-1909",
+      "ioValues": [
+        {
+          "name": "geometry",
+          "ioValue": "__GEOMETRY_INPUT__"
+        },
+        {
+          "name": "File Type",
+          "ioValue": "STEP",
+          "currentEquation": "STEP"
+        },
+        {
+          "name": "Resolution (dpi)",
+          "ioValue": 96
+        },
+        {
+          "name": "STL Tolerance",
+          "ioValue": 0.05
+        },
+        {
+          "name": "Part Name",
+          "ioValue": "Dust Hose Adapter",
+          "currentEquation": "Dust Hose Adapter"
+        }
+      ],
+      "type": null,
+      "resolution": 96,
+      "importIndex": 0,
+      "partName": "Dust Hose Adapter"
+    },
     {
       "atomType": "Molecule",
       "x": 0.4,
@@ -3136,6 +3169,11 @@
     }
   ],
   "allConnectors": [
+    {
+      "ap2Name": "geometry",
+      "ap1ID": "id-195",
+      "ap2ID": "id-1909"
+    },
     {
       "ap2Name": "number or geometry",
       "ap1ID": "id-195",
